@@ -7,7 +7,9 @@ public class Imc
     
     public String calcularIMC()
     {
-        float valorIMC = usr.peso/(usr.altura*usr.altura);
+        float pesoNeto = usr.getPeso();
+        float alturaN = usr.getAltura();
+        float valorIMC = pesoNeto/(alturaN*alturaN);
         resultado = "Tu IMC es: "+valorIMC;
         return resultado;
     }

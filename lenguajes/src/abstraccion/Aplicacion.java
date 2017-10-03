@@ -68,8 +68,10 @@ public class Aplicacion extends javax.swing.JFrame {
     private void botoncitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botoncitoActionPerformed
         //Acciones del boton
         Usuario moises = new Usuario();
-        moises.peso = 90;
-        moises.altura = 1.75f;
+        //moises.peso = 90;
+        //moises.altura = 1.75f;
+        moises.setPeso(-70);
+        moises.setAltura(1.60f);
         Imc modelo= new  Imc();
         modelo.usr = moises;
         modelo.calcularIMC();
@@ -102,7 +104,6 @@ public class Aplicacion extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Aplicacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
