@@ -112,15 +112,21 @@ public class Aplicacion extends javax.swing.JFrame {
 
     private void botoncitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botoncitoActionPerformed
         //Acciones del boton
-        Usuario moises = new Usuario();
-        //moises.peso = 90;
-        //moises.altura = 1.75f;
-        moises.setPeso(-70);
-        moises.setAltura(1.60f);
-        Imc modelo= new  Imc();
-        modelo.usr = moises;
-        modelo.calcularIMC();
-        etiqueta.setText(modelo.calcularIMC());
+       try{
+       
+       Usuario mc = new Usuario();
+       float peso = Float.parseFloat(TextoPeso.getText());
+       Validaciones.validarNumeroNegativo(peso);
+       mc.setPeso(peso);
+       float altura = Float.parseFloat(TextoAltura.getText());
+       Validaciones.validarNumeroNegativo(altura);
+       mc.setAltura(altura);
+       Imc modelo = new Imc();
+       modelo.usr = mc;
+       }catch(Exception e){
+        etiqueta.setText(e.getMessage());
+       }   
+        //etiqueta.setText(modelo.calcularIMC());
     }//GEN-LAST:event_botoncitoActionPerformed
 
     /**
